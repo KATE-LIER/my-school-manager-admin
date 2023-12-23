@@ -1,0 +1,38 @@
+version: "3"
+
+services:
+  app:
+    container_name: my-school-manager-app
+    build:
+      context: .
+      dockerfile: ./.docker/app/Dockerfile
+    command: bundle exec puma -C config/puma.rb && bundle exec pumactl start
+    tty: true
+    networks:
+      - my_school_manager_common_network
+    volumes:
+      - .:/app
+      - bundle-data:/usr/local/bundle
+      - sockets:/app/tmp/sockets # socketファイルの共有
+
+  nginx:
+    container_name: my-school-manager-nginx
+    build:
+      context: .
+      dockerfile: ./.docker/nginx/Dockerfile
+    ports:
+      - "8000:8000"
+    volumes:
+      - sockets:/app/tmp/sockets # socketファイルの共有
+    networks:
+      - my_school_manager_common_network
+    depends_on:
+      - app
+
+networks:
+  my_school_manager_common_network:
+    external: true
+
+volumes:
+  bundle-data:
+  sockets:
