@@ -1,0 +1,64 @@
+/* Box Sizing */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* Text Adjustment */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Reset Margins */
+body, h1, h2, h3, h4, p, figure, blockquote, dl, dd {
+  margin: 0;
+}
+
+/* Reset List Styles */
+ul[role='list'], ol[role='list'] {
+  list-style: none;
+}
+
+/* Body Styles */
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+/* Heading and Paragraph Styles */
+h1, h2, h3, h4, button, input, label {
+  line-height: 1.1;
+}
+
+/* Text Wrap Balance */
+h1, h2, h3, h4 {
+  text-wrap: balance;
+}
+
+/* Link Styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+/* Image Styles */
+img, picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Form Element Styles */
+input, button, textarea, select {
+  font: inherit;
+}
+
+/* Textarea Min Height */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* Scroll Target Styles */
+:target {
+  scroll-margin-block: 5ex;
+}
