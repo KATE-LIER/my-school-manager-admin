@@ -27,8 +27,12 @@ RUN apk update && \
       build-base \
       curl-dev
 
+
 # Mac環境下でnokogiriがLoadErrorにならないよう対策
 RUN apk add --no-cache gcompat
+
+# Node.jsとYarnのインストール
+RUN apk add --no-cache nodejs yarn
 
 # imagemagickのインストール
 RUN apk add --no-cache imagemagick
