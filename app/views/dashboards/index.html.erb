@@ -1,0 +1,63 @@
+<div x-data="setup()" :class="{ 'dark': isDark }">
+  <div class="min-h-screen flex flex-col flex-auto flex-shrink-0 antialiased bg-white dark:bg-gray-700 text-black dark:text-white">
+    <%= render "layouts/shared/header" %>
+    <%= render "layouts/shared/sidebar" %>
+    <div class="h-full mt-16 mb-10">
+      <div class="grid grid-cols-1 p-4 gap-4 mt-5">
+        <h2 class="border-0 text-lg border-gray-400 border-l-4 border-b-4 p-2">各種フォーム</h2>
+        <div>
+          <button class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg btn-success text-white">入会フォーム(準備中)</button>
+          <button class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg btn-warning text-white">体験レッスン申し込みフォーム(準備中)</button>
+        </div>
+      </div>
+      <div class="grid grid-cols-1 p-4 gap-4 mt-5">
+        <h2 class="border-0 text-lg border-gray-400 border-l-4 border-b-4 p-2">会員管理</h2>
+        <div class="grid md:grid-cols-4 grid-cols-2 p-4 gap-4">
+          <div class="group relative block h-full bg-white">
+            <div class="rounded-lg border border-sky-700 bg-white transition">
+              <div class="p-4 sm:p-6 bg-sky-100 ">
+                <h3 class="font-semibold text-gray-900 sm:text-lg">一覧</h3>
+                <p class="mt-3 text-xs text-gray-700">スクールの会員一覧です</p>
+              </div>
+            </div>
+          </div>
+          <div class="group relative block h-full bg-white">
+              <div class="rounded-lg border border-sky-700 bg-white transition">
+                <div class="p-4 sm:p-6 bg-sky-100 ">
+                  <h3 class="font-semibold text-gray-900 sm:text-lg">在籍生徒</h3>
+                  <p class="mt-3 text-xs text-gray-700">レッスンに通う生徒の一覧です</p>
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>
+      <div class="grid grid-cols-1 p-4 gap-4 mt-5">
+        <h2 class="border-0 text-lg border-gray-400 border-l-4 border-b-4 p-2">拠点</h2>
+        <div class="grid md:grid-cols-4 grid-cols-2 p-4 gap-4">
+          <div class="group relative block h-full bg-white">
+            <div class="rounded-lg border border-sky-700 bg-white transition">
+              <div class="p-4 sm:p-6 bg-sky-100 ">
+                <h3 class="font-semibold text-gray-900 sm:text-lg">一覧</h3>
+                <p class="mt-3 text-xs text-gray-700">校舎の一覧です</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="grid grid-cols-1 p-4 gap-4 mt-5">
+        <h2 class="border-0 text-lg border-gray-400 border-l-4 border-b-4 p-2">スクール関連</h2>
+        <div class="grid md:grid-cols-4 grid-cols-2 p-4 gap-4">
+          <div class="group relative block h-full bg-white">
+            <div class="rounded-lg border border-sky-700 bg-white transition">
+              <div class="p-4 sm:p-6 bg-sky-100 ">
+                <h3 class="font-semibold text-gray-900 sm:text-lg">レッスン</h3>
+                <p class="mt-3 text-xs text-gray-700">開講しているレッスンの一覧です</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <%= render "layouts/shared/footer" %>
+</div>  
