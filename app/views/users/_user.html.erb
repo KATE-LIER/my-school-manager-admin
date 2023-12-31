@@ -1,5 +1,5 @@
-<tr>        
-  <td>
+<tr class="border border-2">        
+  <td class="border border-2">
     <div class="flex items-center gap-3">
       <div class="avatar">
         <div class="mask mask-squircle w-12 h-12">
@@ -16,10 +16,8 @@
       <% end %>
     </div>
   </td>
-  <td>
+  <td class="border border-2">
     <%= user.number %>
-    <br/>
-    <span class="badge badge-ghost badge-sm">Desktop Support Technician</span>
   </td>
-  <td><%= user.birth_day.strftime("%Y年%-m月%-d日") %></td>
+  <td class="border border-2"><%= user.birth_day.strftime("%Y年%-m月%-d日") %></td>
 </tr>

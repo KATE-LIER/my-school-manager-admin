@@ -3,7 +3,15 @@ class UsersController < ApplicationController
   before_action :add_index_breadcrumb, only: %i(new edit)
 
   def index
-    @users = User.order(:id).paginate(page: params[:page], per_page: 25)
+    if params[:sort].present?
+      if params[:sort] == "student"
+        @users = User.where(student: true).order(:id).paginate(page: params[:page], per_page: 25)
+      elsif params[:sort] == "parent"
+        @users = User.where(parent: true).order(:id).paginate(page: params[:page], per_page: 25)
+      end
+    else
+      @users = User.order(:id).paginate(page: params[:page], per_page: 25)
+    end
   end
 
   def new

@@ -7,15 +7,24 @@
         <%= render 'layouts/shared/breadcrumbs' %>
         <h2 class="border-0 text-lg border-gray-400 border-l-4 border-b-4 p-2">会員一覧</h2>
         <div class="overflow-x-auto">
-          <table class="table">
+          <table class="table border border-2">
+            <caption class="caption-top">
+              <div class="flex justify-between items-center mb-2">
+                <div>
+                  <%= link_to new_user_path, class: 'btn btn-primary' do %>
+                    <p class="text-sm font-medium leading-none text-white">新規会員登録</p>
+                  <% end %>
+                </div>
+              </div>
+            </caption>
             <thead>
               <tr class="dark:text-white">
-                <th>名前</th>
-                <th>会員番号</th>
-                <th>生年月日</th>
+                <th class="border border-2">名前</th>
+                <th class="border border-2">会員番号</th>
+                <th class="border border-2">生年月日</th>
               </tr>
             </thead>
-            <tbody>
+            <tbody class="border border-2"">
               <%= render partial: "user", collection: @users %>
             </tbody>
           </table>
