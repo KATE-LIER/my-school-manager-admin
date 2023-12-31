@@ -1,0 +1,41 @@
+<div x-data="setup()" :class="{ 'dark': isDark }">
+  <div class="min-h-screen flex flex-col flex-auto flex-shrink-0 antialiased bg-white dark:bg-gray-700 text-black dark:text-white">
+    <%= render "layouts/shared/header" %>
+    <%= render "layouts/shared/sidebar" %>
+    <div class="h-full mt-16 mb-10">
+      <div class="grid grid-cols-1 p-4 gap-4 mt-5">
+        <%= render 'layouts/shared/breadcrumbs' %>
+        <h2 class="border-0 text-lg border-gray-400 border-l-4 border-b-4 p-2"><%= @user.name%>さんの登録情報</h2>
+        <div role="tablist" class="tabs tabs-bordered">
+          <input type="radio" name="my_tabs_1" role="tab" class="tab text-xs md:text-base h-28 md:h-auto dark:text-white" aria-label="基本情報" checked />
+          <div role="tabpanel" class="tab-content">
+            <%= render "form", user: @user, number: @user.number, btn_msg: "更新" %>
+          </div>
+
+          <input type="radio" name="my_tabs_1" role="tab" class="tab text-xs md:text-base h-28 md:h-auto dark:text-white" aria-label="レッスン情報"  />
+          <div role="tabpanel" class="tab-content">
+            レッスン情報 準備中
+          </div>
+
+          <input type="radio" name="my_tabs_1" role="tab" class="tab text-xs md:text-base h-28 md:h-auto dark:text-white" aria-label="出席情報" />
+          <div role="tabpanel" class="tab-content">
+            出席情報 準備中
+          </div>
+
+          <input type="radio" name="my_tabs_1" role="tab" class="tab text-xs md:text-base h-28 md:h-auto dark:text-white" aria-label="決済情報"  />
+          <div role="tabpanel" class="tab-content">
+            決済情報 準備中
+          </div>
+
+          <input type="radio" name="my_tabs_1" role="tab" class="tab text-xs md:text-base h-28 md:h-auto dark:text-white" aria-label="準備中" />
+          <div role="tabpanel" class="tab-content">
+            準備中
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <%= render "layouts/shared/footer" %>
+</div>
+<%# 郵便番号自動表示ライブラリ %>
+<script src="https://yubinbango.github.io/yubinbango/yubinbango.js" charset="UTF-8"></script>

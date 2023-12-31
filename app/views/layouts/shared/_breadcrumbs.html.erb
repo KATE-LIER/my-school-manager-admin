@@ -1,0 +1,27 @@
+<div class="max-w-lg text-sm breadcrumbs">
+  <ul>
+    <li>
+      <%= link_to dashboards_path do %>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="w-4 h-4 stroke-current"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"></path></svg>
+        トップページ
+      <% end %>
+    </li> 
+    <% @breadcrumbs.each do |breadcrumb| %>
+      <% if breadcrumb[:path].blank? %>
+        <li>
+          <span class="inline-flex gap-2 items-center font-semibold">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="w-4 h-4 stroke-current"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"></path></svg>
+            <%= link_to breadcrumb[:label], breadcrumb[:path] %>
+          </span>
+        </li>
+      <% else %>
+        <li>
+          <span class="inline-flex gap-2 items-center font-semibold">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="w-4 h-4 stroke-current"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"></path></svg>
+            <%= link_to breadcrumb[:label], breadcrumb[:path] %>
+          </span>
+        </li>
+      <% end %>
+    <% end %>
+  </ul>
+</div>

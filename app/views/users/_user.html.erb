@@ -1,0 +1,25 @@
+<tr>        
+  <td>
+    <div class="flex items-center gap-3">
+      <div class="avatar">
+        <div class="mask mask-squircle w-12 h-12">
+          <% if !user.image_data.present? %>
+            <%= image_tag user.image[:small].url %>
+          <% else %>
+            <%= image_tag "no-image.jpg", alt: "no-image", class: "w-5 h-5" %>
+          <% end %>
+        </div>
+      </div>
+      <%= link_to edit_user_path(user) do %>
+        <div class="font-bold text-blue-600"><%= user.name %></div>
+        <div class="text-sm opacity-50 dark:text-white"><%= user.name_reading %></div>
+      <% end %>
+    </div>
+  </td>
+  <td>
+    <%= user.number %>
+    <br/>
+    <span class="badge badge-ghost badge-sm">Desktop Support Technician</span>
+  </td>
+  <td><%= user.birth_day.strftime("%Y年%-m月%-d日") %></td>
+</tr>

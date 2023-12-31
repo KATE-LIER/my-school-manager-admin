@@ -1,0 +1,120 @@
+<%= form_with(model: user, class: "space-y-4 h-adr") do |form| %>
+  <span class="p-country-name" style="display:none;">Japan</span>
+  <%= render "layouts/shared/error_messages" %>
+  <div>
+    <%= form.label :name, class: "label" do %>
+      <span class="text-base label-text dark:text-white">お名前</span>
+    <% end %>
+    <%= form.text_field :name, placeholder: "名前を入力", class: "w-full input input-bordered" %>
+  </div>
+
+  <div>
+    <%= form.label :name_reading, class: "label" do %>
+      <span class="text-base label-text dark:text-white">ふりがな</span>
+    <% end %>
+    <%= form.text_field :name_reading, placeholder: "ひらがなで入力", class: "w-full input input-bordered" %>
+  </div>
+
+  <div>
+    <%= form.label :image_data, class: "label" do %>
+      <span class="text-base label-text dark:text-white">プロフィール画像</span>
+    <% end %>
+    <%= form.hidden_field :image, value: user.cached_image_data %>
+    <%= form.file_field :image, class: "w-full input input-bordered" %>
+  </div>
+
+  <div>
+    <%= form.label :number, class: "label" do %>
+      <span class="text-base label-text dark:text-white">会員番号 (※自動採番)</span>
+    <% end %>
+    <%= form.number_field :number, placeholder: "会員番号を入力", value: number, class: "w-full input input-bordered" %>
+  </div>
+
+  <div>
+    <%= form.label :email, class: "label" do %>
+      <span class="text-base label-text dark:text-white">メールアドレス</span>
+    <% end %>
+    <%= form.email_field :email, placeholder: "school@gmail.com", class: "w-full input input-bordered" %>
+  </div>
+
+  <div>
+    <%= form.label :phone_number, class: "label" do %>
+      <span class="text-base label-text dark:text-white">連絡先(電話番号)</span>
+    <% end %>
+    <%= form.text_field :phone_number, placeholder: "ハイフンなし・半角数字で入力", class: "w-full input input-bordered" %>
+  </div>
+
+  <div>
+    <%= form.label :birth_day, class: "label" do %>
+      <span class="text-base label-text dark:text-white">生年月日</span>
+    <% end %>
+    <%= form.date_field :birth_day, class: "w-full input input-bordered" %>
+  </div>
+
+  <div>
+    <%= form.label :gender, class: "label" do %>
+      <span class="text-base label-text dark:text-white">性別</span>
+    <% end %>
+    <%= form.select :gender, options_for_select(["男性", "女性"]), {}, class: "w-full input input-bordered" %>
+  </div>
+
+  <div>
+    <%= form.label :postal_code, class: "label" do %>
+      <span class="text-base label-text dark:text-white">郵便番号</span>
+    <% end %>
+    <%= form.number_field :postal_code, placeholder: "ハイフンなし・半角数字で入力", class: "p-postal-code w-full input input-bordered" %>
+  </div>
+
+  <div>
+    <%= form.label :prefecture, class: "label" do %>
+      <span class="text-base label-text dark:text-white">都道府県</span>
+    <% end %>
+    <%= form.text_field :prefecture, placeholder: "都道府県を入力", class: "p-region w-full input input-bordered" %>
+  </div>
+
+  <div>
+    <%= form.label :city, class: "label" do %>
+      <span class="text-base label-text dark:text-white">市町村</span>
+    <% end %>
+    <%= form.text_field :city, placeholder: "市町村を入力", class: "p-locality w-full input input-bordered" %>
+  </div>
+
+  <div>
+    <%= form.label :address, class: "label" do %>
+      <span class="text-base label-text dark:text-white">住所(番地)</span>
+    <% end %>
+    <%= form.text_field :address, placeholder: "住所(番地)を入力", class: "p-street-address w-full input input-bordered" %>
+  </div>
+
+  <div>
+    <%= form.label :building, class: "label" do %>
+      <span class="text-base label-text dark:text-white">建物・マンション名・部屋番号</span>
+    <% end %>
+    <%= form.text_field :building, placeholder: "建物・マンション名・部屋番号を入力", class: "p-extended-address w-full input input-bordered" %>
+  </div>
+
+  <div>
+    <%= form.label :status, class: "label" do %>
+      <span class="text-base label-text dark:text-white">ステータス</span>
+    <% end %>
+    <%= form.select :status, options_for_select([['アクティブ', 1], ['アーカイブ', 0]]), {}, class: "w-full input input-bordered" %>
+  </div>
+
+  <div>
+    <%= form.label :student do %>
+      <%= form.check_box :student, class: "input-checkbox" %>
+      <span class="text-base label-text dark:text-white">生徒ラベル</span>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :parent do %>
+      <%= form.check_box :parent, class: "input-checkbox" %>
+      <span class="text-base label-text dark:text-white">保護者ラベル</span>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.button btn_msg, class: "btn btn-block text-white btn-success" %>
+  </div>
+<% end %>

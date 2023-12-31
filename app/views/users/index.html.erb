@@ -1,0 +1,39 @@
+<div x-data="setup()" :class="{ 'dark': isDark }">
+  <div class="min-h-screen flex flex-col flex-auto flex-shrink-0 antialiased bg-white dark:bg-gray-700 text-black dark:text-white">
+    <%= render "layouts/shared/header" %>
+    <%= render "layouts/shared/sidebar" %>
+    <div class="h-full mt-16 mb-10">
+      <div class="grid grid-cols-1 p-4 gap-4 mt-5">
+        <%= render 'layouts/shared/breadcrumbs' %>
+        <h2 class="border-0 text-lg border-gray-400 border-l-4 border-b-4 p-2">会員一覧</h2>
+        <div class="overflow-x-auto">
+          <table class="table">
+            <thead>
+              <tr class="dark:text-white">
+                <th>名前</th>
+                <th>会員番号</th>
+                <th>生年月日</th>
+              </tr>
+            </thead>
+            <tbody>
+              <%= render partial: "user", collection: @users %>
+            </tbody>
+          </table>
+          <div class="text-center my-4">
+            <div role="navigation" aria-label="Pagination" class="px-3 py-2 mx-2 text-gray-700 no-underline bg-white rounded-lg dark:bg-gray-700 text-black dark:text-white">
+              <div class="flickr_pagination">
+                <div class="py-4">
+                  <%= page_entries_info @users %>
+                </div>
+                <div class="py-4">
+                  <%= will_paginate @users %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <%= render "layouts/shared/footer" %>
+</div>  

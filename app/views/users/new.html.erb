@@ -1,0 +1,16 @@
+<div x-data="setup()" :class="{ 'dark': isDark }">
+  <div class="min-h-screen flex flex-col flex-auto flex-shrink-0 antialiased bg-white dark:bg-gray-700 text-black dark:text-white">
+    <%= render "layouts/shared/header" %>
+    <%= render "layouts/shared/sidebar" %>
+    <div class="h-full mt-16 mb-10">
+      <div class="grid grid-cols-1 p-4 gap-4 mt-5">
+        <%= render 'layouts/shared/breadcrumbs' %>
+        <h2 class="border-0 text-lg border-gray-400 border-l-4 border-b-4 p-2">新規会員登録</h2>
+        <%= render "form", user: @user, number: @number, btn_msg: "登録" %>
+      </div>
+    </div>
+  </div>
+  <%= render "layouts/shared/footer" %>
+</div>
+<%# 郵便番号自動表示ライブラリ %>
+<script src="https://yubinbango.github.io/yubinbango/yubinbango.js" charset="UTF-8"></script>

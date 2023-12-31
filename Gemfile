@@ -36,8 +36,23 @@ gem "rails-i18n", "~> 7.0.0"
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 gem "image_processing", "~> 1.2"
 
+# mini replacement for RMagick
+gem "mini_magick"
+
 # Bundle and process CSS in Rails with Tailwind, PostCSS, and Sass via Node.js.
 gem "cssbundling-rails", "~> 1.3"
+
+# Soft deletes for ActiveRecord done right
+gem "discard"
+
+# Magical Authentication
+gem "sorcery"
+
+# File Attachment toolkit for Ruby applications
+gem "shrine", "~> 3.5"
+
+# Pagination library for Rails and other Ruby applications
+gem 'will_paginate', '~> 3.3'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
@@ -48,3 +63,5 @@ group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
 end
+
+
